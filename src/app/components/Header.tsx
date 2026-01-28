@@ -10,23 +10,20 @@ interface HeaderProps {
 
 export function Header({ cartItemCount, onNavigate, currentView, onAdminClick }: HeaderProps) {
   return (
-    <header className="bg-white border-b-2 shadow-sm" style={{ borderBottomColor: 'var(--safira)' }}>
-      <div className="max-w-[1800px] mx-auto px-6 py-4">
+    <header className="bg-white border-b-3 shadow-sm" style={{ borderBottomColor: 'var(--safira)' }}>
+      <div className="max-w-full mx-auto px-0 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button 
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            className="relative w-full h-10 flex items-center px-4 hover:opacity-80 transition-opacity"
           >
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center" 
-                 style={{ backgroundColor: 'var(--safira)' }}>
-              <Cpu className="w-6 h-6 text-white" />
+            {/* LOGO ESQUERDA */}
+            <div className="absolute left-0 flex items-center">
+            <img src="/images/imagem.png" alt="Logo" className="h-20 object-contain"/>
             </div>
-            <div className="text-left">
-              <div className="font-bold text-lg" style={{ color: 'var(--safira)' }}>
-                Lab Eletrônica
-              </div>
-              <div className="text-xs text-gray-500">Sistema de Estoque</div>
+            <div className="absolute left-1/2 mx-auto text-center">
+              <div className="text-lg text-gray-500">Sistema de Estoque</div>
             </div>
           </button>
 

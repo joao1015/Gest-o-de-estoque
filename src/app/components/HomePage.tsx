@@ -1,6 +1,8 @@
 import { Search, ShoppingCart, AlertTriangle, Package } from 'lucide-react';
 import { Card } from '@/app/components/ui/card';
 import { categories } from '@/app/data/mockComponents';
+import { Capacitor, Resistor, Inductor, Diode, IC, Transistor,Connector } from './ComponentIcons';
+import { ReactNode } from 'react';
 
 interface HomePageProps {
   onNavigate: (view: string, category?: string) => void;
@@ -9,15 +11,16 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate, lowStockCount, recentWithdrawals }: HomePageProps) {
-  const categoryIcons: Record<string, string> = {
-    'Capacitores': '⚡',
-    'Resistores': '⚙️',
-    'Indutores': '🔋',
-    'Diodos': '💡',
-    'Circuitos Integrados': '🔌',
-    'Transistores': '📡',
-    'Conectores': '🔗',
-  };
+  const categoryIcons: Record<string, ReactNode> = {
+  Capacitores: <Capacitor />,
+  Resistores: <Resistor />,
+  Indutores: <Inductor />,
+  Diodos: <Diode />,
+  'Circuitos Integrados': <IC />,
+  Transistores: <Transistor/>,
+  Conectores: <Connector />,
+};
+
 
   return (
     <div className="max-w-[1600px] mx-auto px-6 py-8">
@@ -85,7 +88,7 @@ export function HomePage({ onNavigate, lowStockCount, recentWithdrawals }: HomeP
               className="p-4 bg-white border-2 rounded-lg hover:shadow-lg transition-all hover:-translate-y-1"
               style={{ borderColor: 'var(--safira)' }}
             >
-              <div className="text-3xl mb-2">{categoryIcons[category] || '📦'}</div>
+              <div className="text-3xl mb-2 flex justify-center text-safira">{categoryIcons[category] || '📦'}</div>
               <div className="text-sm font-medium text-center" style={{ color: 'var(--safira)' }}>
                 {category}
               </div>
