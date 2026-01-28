@@ -1,6 +1,8 @@
 import { ShoppingCart, Cpu, Shield } from 'lucide-react';
 import { Badge } from '@/app/components/ui/badge';
-import logoimg from "@/assets/imagem.png";
+import logoimg from '../../assets/imagem.png';
+
+
 
 interface HeaderProps {
   cartItemCount: number;
