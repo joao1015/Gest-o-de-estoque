@@ -1,5 +1,6 @@
 import { ShoppingCart, Cpu, Shield } from 'lucide-react';
 import { Badge } from '@/app/components/ui/badge';
+import logoimg from "@/assets/imagem.png";
 
 interface HeaderProps {
   cartItemCount: number;
@@ -20,7 +21,7 @@ export function Header({ cartItemCount, onNavigate, currentView, onAdminClick }:
           >
             {/* LOGO ESQUERDA */}
             <div className="absolute left-0 flex items-center">
-            <img src="/images/imagem.png" alt="Logo" className="h-20 object-contain"/>
+            <img src={logoimg} alt="Logo" className="h-20 object-contain"/>
             </div>
             <div className="absolute left-1/2 mx-auto text-center">
               <div className="text-lg text-gray-500">Sistema de Estoque</div>
