@@ -24,9 +24,6 @@ export function Header({ cartItemCount, onNavigate, currentView, onAdminClick }:
             <div className="absolute left-0 flex items-center z-10">
             <img src="/imagem.png" alt="Logo" className="h-20 w-auto object-contain"/>
             </div>
-            <div className="absolute left-1/2 mx-auto text-center">
-              <div className="text-lg text-gray-500">Sistema de Estoque</div>
-            </div>
           </button>
  
           {/* Right Side */}
